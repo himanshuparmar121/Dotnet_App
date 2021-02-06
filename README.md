@@ -1,4 +1,4 @@
-This repository is for training and learning purpose. The following tasks were performed on following date:
+This repository is regarding implementation of real time scenario. The following tasks were performed on following date:
 
 1. 26/10/2020 - Installed Vscode and GitHub and created a repository
 
@@ -20,4 +20,14 @@ This repository is for training and learning purpose. The following tasks were p
 
 10. 05/12/2020 - Created a console app with real time Overriding Concepts.
 
-11. 20/12/2020 - Connected COnsole App with MySql Database to fetch the entered values.
+11. 20/12/2020 - Connected Console App with MySql Database to store details in database & fetch details by entering parameter.
+
+12. 22/12/2020 - Created config file and assigned the database connection string to ConnectionString.
+
+13. 25/12/2020 - camelCase doesn't work in CSharp, PascalCase(UpperCamelCase) is preferred.
+
+12. 30/01/2021 - Did some namespace changes and made seperate folders for each entity.
+
+13. 06/02/2021 - Everything works with object, learned to return and pass any object of any class in differ methods defined in another class.
+
+14. 06/02/2021 - Created a Dockerfile and build image of the Console App, but got stuck in accessing config file.
