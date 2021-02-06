@@ -7,7 +7,7 @@ namespace ConsoleApp {
     public class Program {
         void StudentFunction() {
 
-            MyDatabaseConnection studentData = new MyDatabaseConnection();
+            StudentDatabase studentData = new StudentDatabase();
             StudentLogic studentLogic = new StudentLogic();
 
                 Console.WriteLine("\t1. Add Students details. ");
@@ -26,7 +26,7 @@ namespace ConsoleApp {
 
                     case 2:
                         // call to GetStudent method to fetch data from Database
-                        studentData.GetStudent();
+                        studentLogic.CheckStudentDetailsFromDatabase();
                         break;
 
                     case 3:

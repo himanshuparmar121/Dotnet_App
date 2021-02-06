@@ -1,4 +1,6 @@
 using System;
+using System.Configuration;
+using MySqlConnector;
 using ConsoleApp.Models;
 
 namespace ConsoleApp.Logic {
@@ -23,6 +25,43 @@ namespace ConsoleApp.Logic {
             student.Marks = Convert.ToSingle(Console.ReadLine());
 
             return student;
+        }
+
+        public void CheckStudentDetailsFromDatabase() {
+            
+            string ConnectionString = ConfigurationManager.ConnectionStrings["Connection"].ToString();
+            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+
+            Console.Write("Enter a Student ID to search in Database: ");
+            String ID = Console.ReadLine();
+
+            bool Input = false;
+            Console.WriteLine("Fetching The Data from Database...");
+            
+            try {
+                Connection.Open();
+
+                string FetchString = "SELECT Name, Roll_No FROM studentdetails WHERE ID = '" + ID + "'";
+                
+                MySqlCommand Command = new MySqlCommand(FetchString, Connection);
+                MySqlDataReader Data = Command.ExecuteReader();
+
+                while(Data.Read()) {
+                    Console.WriteLine("Name: " + Data[0]);
+                    Console.WriteLine("Roll No: " + Data[1]);
+                    Input = true;            
+                }
+
+                if(Input == false) {
+                    Console.WriteLine("Student with given ID is not present");
+                }
+                Data.Close();
+            } catch(Exception ex) {
+                Console.WriteLine(ex.ToString());
+            }
+
+            Connection.Close();
+            Console.WriteLine("Done.\n\n");
         }
     }
 }
