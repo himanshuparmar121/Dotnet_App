@@ -9,8 +9,8 @@ namespace ConsoleApp.DataLayer {
         // connection string in which the user, database, server and password is stored.
         public void AddStudent(Student student) {
 
-            string ConnectionString = ConfigurationManager.ConnectionStrings["Connection"].ToString();
-            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+            string Connection_String = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            MySqlConnection Connection = new MySqlConnection(Connection_String);
 
             Console.WriteLine("Connecting to MySQL...");
 

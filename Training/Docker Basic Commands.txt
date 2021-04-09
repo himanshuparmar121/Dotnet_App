@@ -1,0 +1,42 @@
+Docker Important commands:
+4. WHatever happening in docker it is happening in container.
+
+5. (-it command): it is also used to go inside a container.
+
+lets pull image of mongodb, to check mongo is installed in system or not, type mongo
+- move to dockerhub.com and download the mongo image
+
+docker ps --all : for checking any container is running or not
+docker pull image_name : to download the image in docker
+
+6. For mongodb:
+	docker start containerID : to start the container
+
+	docker exec -it containerID : to go inside and it gives us the bash shell of mongo
+	>show dbs : in the mongodb bash or sh
+	-to exit from the bash: ctrl+d
+	-to from the container: ctrl+d
+
+	docker stop containerID: to stop the running container
+
+7. Exec Command:
+	when we write exec -it command then it say that change the stdin and stdout 
+	(-i: keep the stdin open even if not attached)
+	(-t: allocate a pseudo tty)
+	
+8. How to go into container in multiple way: 
+	i). docker exec -it containerID
+	ii). docker run -it image bash : not recommended
+	iii). touch fileName.txt : to create a file in mongo
+	
+9. To create a docker image there should be a Dockerfile(in which commands are written)
+   and then this file is sended to docker client and it will generate a custom image.
+	Dockerfile-> FROM alpine
+		     RUN apk add binutils	
+		     RUN apk add someprogram
+
+	-docker build .
+
+10. to give name to the container:
+	docker build -t username/anyname:tag .	// . is importanr at last
+	docker run username/anyname

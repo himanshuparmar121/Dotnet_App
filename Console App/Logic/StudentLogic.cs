@@ -28,9 +28,9 @@ namespace ConsoleApp.Logic {
         }
 
         public void CheckStudentDetailsFromDatabase() {
-            
-            string ConnectionString = ConfigurationManager.ConnectionStrings["Connection"].ToString();
-            MySqlConnection Connection = new MySqlConnection(ConnectionString);
+
+            string Connection_String = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            MySqlConnection Connection = new MySqlConnection(Connection_String);
 
             Console.Write("Enter a Student ID to search in Database: ");
             String ID = Console.ReadLine();

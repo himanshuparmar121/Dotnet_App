@@ -4,13 +4,19 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "PowerShell Interactive Session",
+            "type": "PowerShell",
+            "request": "launch",
+            "cwd": ""
+        },
         
         {
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Console App/bin/Debug/netcoreapp3.1/Dotnet_App.dll",
+            "program": "${workspaceFolder}/Console App/bin/Debug/netcoreapp5.0/Dotnet_App.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Console App",
             "console": "integratedTerminal",
